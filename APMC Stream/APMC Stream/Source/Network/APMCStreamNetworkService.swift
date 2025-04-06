@@ -8,20 +8,32 @@
 import Foundation
 
 protocol APMCStreamAPIService {
-    func request<T: Decodable>(_ endpoint: APMCStreamApiSetupProtocol) async throws -> T?
+    func request<T: Decodable>(_ endpoint: APMCStreamApiSetupProtocol) async throws -> T
 }
 
 class APMCStreamNetworkService: APMCStreamAPIService {
-    private let baseURL: URL
+    private let baseURL: URL?
     private let session: URLSession
     
-    init(baseURL: URL, session: URLSession = .shared) {
-        self.baseURL = baseURL
+    init(session: URLSession = .shared) {
+        self.baseURL = Self.getBaseURL()
         self.session = session
     }
     
-    func request<T: Decodable>(_ endpoint: APMCStreamApiSetupProtocol) async throws -> T? {
-        guard var components = URLComponents(url: baseURL.appendingPathComponent(endpoint.path), resolvingAgainstBaseURL: false) else { return nil}
+    static func getBaseURL() -> URL? {
+        guard let baseUrl = Bundle.main.object(forInfoDictionaryKey: "BaseURL") as? String else { return nil }
+        return URL(string: baseUrl)
+    }
+    
+    func request<T: Decodable>(_ endpoint: APMCStreamApiSetupProtocol) async throws -> T {
+        guard let baseURL else {
+            throw APMCStreamApiError.badUrl
+        }
+
+        guard var components = URLComponents(url: baseURL.appendingPathComponent(endpoint.path), resolvingAgainstBaseURL: false) else {
+            throw APMCStreamApiError.badUrl
+        }
+        
         components.queryItems = endpoint.parameters
         
         guard let url = components.url else {

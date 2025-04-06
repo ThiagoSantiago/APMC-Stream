@@ -17,7 +17,6 @@ enum HTTPMethod: String {
 protocol APMCStreamApiSetupProtocol {
     var body: Data? { get }
     var path: String { get }
-    var endpoint: String { get }
     var method: HTTPMethod { get }
     var parameters: [URLQueryItem]? { get }
     var headers: [String : String] { get }

@@ -14,4 +14,6 @@
 // EpisodesListView
 
 "EpisodesListView.title" = "Episodes";
+"EpisodesListView.alert.title" = "Error";
+"EpisodesListView.alert.buttonTitle" = "OK";
 

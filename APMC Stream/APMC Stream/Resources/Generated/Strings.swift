@@ -24,6 +24,12 @@ internal enum L10n {
   internal enum EpisodesListView {
     /// Episodes
     internal static let title = L10n.tr("Localizable", "EpisodesListView.title", fallback: "Episodes")
+    internal enum Alert {
+      /// OK
+      internal static let buttonTitle = L10n.tr("Localizable", "EpisodesListView.alert.buttonTitle", fallback: "OK")
+      /// Error
+      internal static let title = L10n.tr("Localizable", "EpisodesListView.alert.title", fallback: "Error")
+    }
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

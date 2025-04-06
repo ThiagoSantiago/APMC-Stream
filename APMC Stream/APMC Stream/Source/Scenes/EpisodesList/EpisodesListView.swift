@@ -9,29 +9,34 @@ import SwiftUI
 
 struct EpisodesListView: View {
     typealias Strings = L10n.EpisodesListView
+    @StateObject private var viewModel = EpisodesListViewModel()
     
-    let episodes: [Episode] = [
-        Episode(id: "1", title: "Introduction to SwiftUI", description: "This is the first sample video.", duration: 596, videoUrl: ""),
-        Episode(id: "2", title: "Understanding State and Binding", description: "This is the first sample video.", duration: 872, videoUrl: ""),
-        Episode(id: "3", title: "Building Custom Components", description: "This is the first sample video.", duration: 743, videoUrl: "")
-        ]
-
-        var body: some View {
-            NavigationStack {
-                List {
-                    ForEach(episodes, id: \.id) { episode in
-                        ZStack {
-                            // TODO: Implement the navigation to the deailView
-
-                            EpisodeListItemCardView(episode: episode, showsIndicator: true)
-                        }
-                        .listRowSeparator(.hidden)
+    var body: some View {
+        NavigationStack {
+            List {
+                ForEach(viewModel.episodes, id: \.id) { episode in
+                    ZStack {
+                        // TODO: Implement the navigation to the deailView
+                        
+                        EpisodeListItemCardView(episode: episode, showsIndicator: true)
                     }
+                    .listRowSeparator(.hidden)
                 }
-                .listStyle(PlainListStyle())
-                .navigationTitle(Strings.title)
             }
+            .listStyle(PlainListStyle())
+            .navigationTitle(Strings.title)
+            .task {
+                viewModel.loadEpisodes()
+            }
+            .alert(Strings.Alert.title,
+                   isPresented: .constant(viewModel.errorMessage != nil),
+                   actions: { Button(Strings.Alert.buttonTitle, role: .cancel)
+                { viewModel.errorMessage = nil }
+            },
+                   message: { Text(viewModel.errorMessage ?? "") }
+            )
         }
+    }
 }
 
 #if DEBUG
