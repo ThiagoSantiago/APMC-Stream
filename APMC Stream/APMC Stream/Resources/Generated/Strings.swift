@@ -10,6 +10,21 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  internal enum EpisodeListItemCardView {
+    /// Localizable.strings
+    ///   APMC Stream
+    /// 
+    ///   Created by Thiago Santiago on 03/04/25.
+    internal static let duration = L10n.tr("Localizable", "EpisodeListItemCardView.duration", fallback: "Duration:")
+    internal enum Indicator {
+      /// chevron.right
+      internal static let imageName = L10n.tr("Localizable", "EpisodeListItemCardView.indicator.imageName", fallback: "chevron.right")
+    }
+  }
+  internal enum EpisodesListView {
+    /// Episodes
+    internal static let title = L10n.tr("Localizable", "EpisodesListView.title", fallback: "Episodes")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

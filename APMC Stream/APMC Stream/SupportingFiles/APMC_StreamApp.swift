@@ -11,7 +11,7 @@ import SwiftUI
 struct APMC_StreamApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            EpisodesListView()
         }
     }
 }

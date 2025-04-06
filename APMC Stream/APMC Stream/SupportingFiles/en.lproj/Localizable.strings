@@ -5,3 +5,13 @@
   Created by Thiago Santiago on 03/04/25.
   
 */
+
+// EpisodeListItemCardView
+
+"EpisodeListItemCardView.duration" = "Duration:";
+"EpisodeListItemCardView.indicator.imageName" = "chevron.right";
+
+// EpisodesListView
+
+"EpisodesListView.title" = "Episodes";
+
