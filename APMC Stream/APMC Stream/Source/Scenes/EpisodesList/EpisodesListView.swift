@@ -9,7 +9,11 @@ import SwiftUI
 
 struct EpisodesListView: View {
     typealias Strings = L10n.EpisodesListView
-    @StateObject private var viewModel = EpisodesListViewModel()
+    @StateObject private var viewModel: EpisodesListViewModel
+    
+    init(viewModel: EpisodesListViewModel = EpisodesListViewModel()) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         NavigationStack {

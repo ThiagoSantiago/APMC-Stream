@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@MainActor
 class EpisodesListViewModel: ObservableObject {
     @Published var episodes: [Episode] = []
     @Published var errorMessage: String?
