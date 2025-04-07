@@ -33,22 +33,9 @@
 		1850C9A32D9DA29D00F6468B /* APMC StreamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "APMC StreamUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		185BAAD62DA32B28002FAEEE /* Exceptions for "APMC Stream" folder in "APMC Stream" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"APMC-Stream-Info.plist",
-			);
-			target = 1850C9872D9DA29C00F6468B /* APMC Stream */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1850C98A2D9DA29C00F6468B /* APMC Stream */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				185BAAD62DA32B28002FAEEE /* Exceptions for "APMC Stream" folder in "APMC Stream" target */,
-			);
 			path = "APMC Stream";
 			sourceTree = "<group>";
 		};

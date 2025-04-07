@@ -45,4 +45,38 @@ final class EpisodesListViewTests: XCTestCase {
         // Then
         assertSnapshot(of: sut, as: .image(precision:0.9))
     }
+    
+    func test_episodesListView_loadingState_snapshot() {
+        // Given
+        let mockViewModel = EpisodesListViewModelMock(
+            episodes: [],
+            isLoading: true,
+            errorMessage: nil
+        )
+        
+        let view = EpisodesListView(viewModel: mockViewModel)
+        
+        let sut = UIHostingController(rootView: view)
+        sut.view.frame = UIScreen.main.bounds
+        
+        // Then
+        assertSnapshot(of: sut, as: .image(precision:0.9))
+    }
+    
+    func test_episodesListView_emptyState_snapshot() {
+        // Given
+        let mockViewModel = EpisodesListViewModelMock(
+            episodes: [],
+            isLoading: false,
+            errorMessage: nil
+        )
+
+        let view = EpisodesListView(viewModel: mockViewModel)
+        
+        let sut = UIHostingController(rootView: view)
+        sut.view.frame = UIScreen.main.bounds
+        
+        // Then
+        assertSnapshot(of: sut, as: .image(precision:0.9))
+    }
 }

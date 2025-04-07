@@ -9,10 +9,12 @@ import Foundation
 @testable import APMC_Stream
 
 class EpisodesListViewModelMock: EpisodesListViewModel {
-    init(episodes: [Episode]) {
+    init(episodes: [Episode], isLoading: Bool = false, errorMessage: String? = nil) {
         super.init(repository: EpisodesListRepositoryMock(episodes: episodes))
         self.episodes = episodes
+        self.isLoading = isLoading
+        self.errorMessage = errorMessage
     }
-
-    override func loadEpisodes() {}
+    
+    override func loadEpisodes() async {}
 }

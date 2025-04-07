@@ -16,4 +16,5 @@
 "EpisodesListView.title" = "Episodes";
 "EpisodesListView.alert.title" = "Error";
 "EpisodesListView.alert.buttonTitle" = "OK";
-
+"EpisodesListView.loading.message" = "Loading Episodes...";
+"EpisodesListView.emptyList.message" = "No episodes available.";

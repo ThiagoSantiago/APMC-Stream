@@ -8,10 +8,9 @@
 import XCTest
 @testable import APMC_Stream
 
-@MainActor
 final class EpisodesListViewModelTests: XCTestCase {
 
-    func test_loadEpisodes_success() {
+    func test_loadEpisodes_success() async {
         // Given
         let expectation = XCTestExpectation(description: "Load Episodes Successfully")
         let expectedEpisodes = [
@@ -22,7 +21,7 @@ final class EpisodesListViewModelTests: XCTestCase {
         let viewModel = EpisodesListViewModel(repository: repository)
 
         // When
-        viewModel.loadEpisodes()
+        await viewModel.loadEpisodes()
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             // Then
@@ -35,7 +34,7 @@ final class EpisodesListViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 1.0)
     }
 
-    func test_loadEpisodes_failure() {
+    func test_loadEpisodes_failure() async {
         // Given
         let expectation = XCTestExpectation(description: "Load Episodes Failure")
         let mockService = APMCStreamNetworkServiceMock(result: .failure(APMCStreamApiError.badUrl))
@@ -43,7 +42,7 @@ final class EpisodesListViewModelTests: XCTestCase {
         let viewModel = EpisodesListViewModel(repository: repository)
 
         // When
-        viewModel.loadEpisodes()
+        await viewModel.loadEpisodes()
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             // Then

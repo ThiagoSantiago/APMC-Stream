@@ -30,6 +30,14 @@ internal enum L10n {
       /// Error
       internal static let title = L10n.tr("Localizable", "EpisodesListView.alert.title", fallback: "Error")
     }
+    internal enum EmptyList {
+      /// No episodes available.
+      internal static let message = L10n.tr("Localizable", "EpisodesListView.emptyList.message", fallback: "No episodes available.")
+    }
+    internal enum Loading {
+      /// Loading Episodes...
+      internal static let message = L10n.tr("Localizable", "EpisodesListView.loading.message", fallback: "Loading Episodes...")
+    }
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
