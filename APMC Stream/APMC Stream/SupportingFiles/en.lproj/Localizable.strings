@@ -18,3 +18,8 @@
 "EpisodesListView.alert.buttonTitle" = "OK";
 "EpisodesListView.loading.message" = "Loading Episodes...";
 "EpisodesListView.emptyList.message" = "No episodes available.";
+
+
+// EpisodeDetailsView
+
+"EpisodeDetailsView.title" = "Episode Details";

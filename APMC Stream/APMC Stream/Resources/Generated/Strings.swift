@@ -10,6 +10,10 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  internal enum EpisodeDetailsView {
+    /// Episode Details
+    internal static let title = L10n.tr("Localizable", "EpisodeDetailsView.title", fallback: "Episode Details")
+  }
   internal enum EpisodeListItemCardView {
     /// Localizable.strings
     ///   APMC Stream

@@ -36,7 +36,7 @@ struct EpisodesListView: View {
                         List {
                             ForEach(viewModel.episodes, id: \.id) { episode in
                                 ZStack {
-                                    // TODO: Implement the navigation to the deailView
+                                    NavigationLink(destination: EpisodeDetailsView(episode: episode)) {}
                                     
                                     EpisodeListItemCardView(episode: episode, showsIndicator: true)
                                 }
