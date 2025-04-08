@@ -38,13 +38,23 @@ struct EpisodeDetailsView: View {
                 Text(episode.title)
                     .font(.title)
                     .bold()
-                    .foregroundColor(.primary)
+                    .foregroundColor(Colors.primaryTextColor.swiftUIColor)
                 
                 if let description = episode.description, !description.isEmpty {
                     Text(description)
                         .font(.body)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(Colors.secondaryTextColor.swiftUIColor)
                 }
+                
+                HStack {
+                    Text(Strings.duration)
+                        .font(.subheadline)
+                        .bold()
+                    
+                    Text(episode.duration.toHourMinAndSec())
+                        .font(.subheadline)
+                }
+                .foregroundColor(Colors.secondaryTextColor.swiftUIColor)
                 
                 Spacer()
             }

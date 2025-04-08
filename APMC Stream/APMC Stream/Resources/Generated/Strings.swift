@@ -11,6 +11,8 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
   internal enum EpisodeDetailsView {
+    /// Duration:
+    internal static let duration = L10n.tr("Localizable", "EpisodeDetailsView.duration", fallback: "Duration:")
     /// Episode Details
     internal static let title = L10n.tr("Localizable", "EpisodeDetailsView.title", fallback: "Episode Details")
   }

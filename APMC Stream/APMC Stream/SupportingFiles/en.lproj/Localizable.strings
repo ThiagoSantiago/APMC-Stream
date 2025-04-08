@@ -23,3 +23,4 @@
 // EpisodeDetailsView
 
 "EpisodeDetailsView.title" = "Episode Details";
+"EpisodeDetailsView.duration" = "Duration:";
